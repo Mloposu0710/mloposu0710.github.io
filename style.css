@@ -12,7 +12,7 @@ body {
 
     margin: 0;
 
-    background-color: #e7ccfd;
+    background-color: #b8eed5;
 
     color: #333;
 
@@ -24,7 +24,7 @@ body {
 
 header {
 
-    background-color: #c87afc;
+    background-color: #5cf59c;
 
     color: white;
 
@@ -38,7 +38,7 @@ header h1 {
 
     margin: 0;
 
-    font-size: 59px;
+    font-size: 56px;
 
 }
 
@@ -92,7 +92,7 @@ section {
 
 h2 {
 
-    color: #b667eb;
+    color: #25eb9f;
 
 }
 
@@ -106,7 +106,7 @@ h2 {
 
     padding: 40px 20px;
 
-    border-radius: 20px;
+    border-radius: 12px;
 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 
@@ -116,15 +116,15 @@ h2 {
 
 button {
 
-    background-color: #b25ceb;
+    background-color: #878f8b;
 
     color: white;
 
     border: none;
 
-    padding: 14px 28px;
+    padding: 12px 25px;
 
-    border-radius: 20px;
+    border-radius: 6px;
 
     cursor: pointer;
 
@@ -134,7 +134,7 @@ button {
 
 button:hover {
 
-    background-color: #7c10bb;
+    background-color: #1dd88a;
 
 }
 
@@ -144,7 +144,7 @@ button:hover {
 
     display: flex;
 
-    gap: 56px;
+    gap: 20px;
 
     flex-wrap: wrap;
 
@@ -160,7 +160,7 @@ button:hover {
 
     padding: 20px;
 
-    border-radius: 20px;
+    border-radius: 50px;
 
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
 
