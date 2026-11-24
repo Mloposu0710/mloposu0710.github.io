@@ -1,121 +1,1856 @@
+
 <!DOCTYPE html>
-
 <html lang="es">
-
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title> 2ª GD CFGB Informática de Oficina</title>
+<title>Incalma | Clínica Veterinaria Rural</title>
 
-    <link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="style.css">
 
+<style>
+:root {
+    --green: #315d48;
+    --dark: #203d30;
+    --light: #eaf0e8;
+    --cream: #faf9f4;
+    --white: #ffffff;
+    --text: #38483d;
+    --gold: #c6a978;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+}
+
+.container {
+    width: 86%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.section {
+    padding: 90px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title span {
+    color: #81977f;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.section-title h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    color: var(--green);
+    margin: 12px 0;
+}
+
+.section-title p {
+    color: #758078;
+    line-height: 1.8;
+    max-width: 650px;
+    margin: auto;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 26px;
+    border-radius: 30px;
+    background: var(--green);
+    color: white;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btn:hover {
+    background: var(--dark);
+    transform: translateY(-3px);
+}
+
+.btn-white {
+    background: white;
+    color: var(--green);
+}
+
+.btn-outline {
+    border: 1px solid var(--green);
+    color: var(--green);
+    background: transparent;
+}
+
+/* BARRA SUPERIOR */
+
+.topbar {
+    background: var(--dark);
+    color: white;
+    padding: 10px 7%;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+/* MENU */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: white;
+    box-shadow: 0 3px 15px #0000000b;
+}
+
+.navbar {
+    width: 88%;
+    max-width: 1250px;
+    margin: auto;
+    min-height: 85px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    color: var(--green);
+    font-size: 34px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.logo small {
+    display: block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 9px;
+    letter-spacing: 2px;
+    margin-top: 7px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 23px;
+}
+
+.nav-links a {
+    font-size: 13px;
+    font-weight: 600;
+    transition: .2s;
+}
+
+.nav-links a:hover {
+    color: #91a88d;
+}
+
+.menu-btn {
+    display: none;
+    border: none;
+    background: none;
+    color: var(--green);
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* PORTADA */
+
+.hero {
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+    color: white;
+    background:
+    linear-gradient(90deg, rgba(22,53,37,.88), rgba(22,53,37,.18)),
+    url('https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=1800')
+    center/cover;
+}
+
+.hero-content {
+    max-width: 730px;
+    padding: 90px 0;
+}
+
+.hero-label {
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(48px, 6vw, 76px);
+    line-height: 1.08;
+    margin-bottom: 25px;
+}
+
+.hero p {
+    font-size: 17px;
+    line-height: 1.9;
+    max-width: 600px;
+    margin-bottom: 32px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* DATOS DESTACADOS */
+
+.highlights {
+    background: white;
+    padding: 35px 0;
+}
+
+.highlight-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    text-align: center;
+    gap: 20px;
+}
+
+.highlight h3 {
+    color: var(--green);
+    font-size: 17px;
+    margin-bottom: 7px;
+}
+
+.highlight p {
+    font-size: 12px;
+    color: #7b857c;
+}
+
+
+
+/* PRESENTACION */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 65px;
+}
+
+.about-image {
+    position: relative;
+}
+
+.about-image img {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.image-note {
+    position: absolute;
+    right: -20px;
+    bottom: 25px;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px #00000015;
+    color: var(--green);
+    font-weight: bold;
+}
+
+.about-text span {
+    color: #829a80;
+    letter-spacing: 3px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.about-text h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    color: var(--green);
+    margin: 15px 0 22px;
+}
+
+.about-text p {
+    line-height: 1.9;
+    margin-bottom: 17px;
+    color: #657268;
+}
+
+.check-list {
+    list-style: none;
+    margin: 22px 0;
+}
+
+.check-list li {
+    margin: 14px 0;
+    font-size: 14px;
+}
+
+.check-list li::before {
+    content: "✓";
+    color: var(--green);
+    font-weight: bold;
+    margin-right: 12px;
+}
+
+/* VALORES */
+
+.values {
+    background: var(--light);
+}
+
+.value-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.value-card {
+    text-align: center;
+    padding: 35px 25px;
+    background: white;
+    border-radius: 17px;
+}
+
+.value-card .emoji {
+    font-size: 38px;
+    margin-bottom: 18px;
+}
+
+.value-card h3 {
+    color: var(--green);
+    margin-bottom: 12px;
+}
+
+.value-card p {
+    font-size: 14px;
+    color: #738075;
+    line-height: 1.8;
+}
+
+/* SERVICIOS */
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.service-card {
+    background: white;
+    border: 1px solid #e9eee8;
+    padding: 30px;
+    border-radius: 18px;
+    transition: .3s;
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 35px #0000000c;
+}
+
+.service-icon {
+    font-size: 35px;
+    margin-bottom: 17px;
+}
+
+.service-card h3 {
+    color: var(--green);
+    margin-bottom: 13px;
+    font-size: 19px;
+}
+
+.service-card p {
+    color: #738075;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.service-tag {
+    display: inline-block;
+    margin-top: 17px;
+    font-size: 11px;
+    background: var(--light);
+    padding: 7px 12px;
+    border-radius: 20px;
+    color: var(--green);
+}
+
+/* INSTALACIONES */
+
+.facilities {
+    background: var(--light);
+}
+
+.facility-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.facility {
+    background: white;
+    overflow: hidden;
+    border-radius: 17px;
+}
+
+.facility img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+}
+
+.facility-content {
+    padding: 23px;
+}
+
+.facility h3 {
+    color: var(--green);
+    margin-bottom: 10px;
+}
+
+.facility p {
+    color: #738075;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* REFUGIO */
+
+.shelter {
+    background: white;
+}
+
+.shelter-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 55px;
+    align-items: center;
+}
+
+.shelter img {
+    height: 470px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.shelter-text h2 {
+    color: var(--green);
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.shelter-text p {
+    line-height: 1.9;
+    color: #66736a;
+    margin-bottom: 18px;
+}
+
+/* ADOPCIONES */
+
+.adoptions {
+    background: var(--cream);
+}
+
+.animal-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.animal-card {
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px #00000008;
+}
+
+.animal-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.animal-info {
+    padding: 23px;
+}
+
+.animal-info h3 {
+    color: var(--green);
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.animal-info p {
+    font-size: 13px;
+    color: #738075;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.animal-info .btn {
+    font-size: 12px;
+    padding: 11px 18px;
+}
+
+/* SEGUNDA OPORTUNIDAD */
+
+.second-chance {
+    color: white;
+    text-align: center;
+    background:
+    linear-gradient(rgba(29,68,47,.91), rgba(29,68,47,.91)),
+    url('https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=1500')
+    center/cover;
+}
+
+.second-chance h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 45px;
+    margin: 15px 0;
+}
+
+.second-chance p {
+    max-width: 760px;
+    margin: 0 auto 25px;
+    line-height: 1.9;
+    color: #e2ebe3;
+}
+
+/* ADOPCION PASOS */
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.step {
+    padding: 25px;
+    text-align: center;
+}
+
+.step-number {
+    width: 55px;
+    height: 55px;
+    background: var(--light);
+    color: var(--green);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    margin: 0 auto 17px;
+    font-weight: bold;
+    font-size: 21px;
+}
+
+.step h3 {
+    color: var(--green);
+    margin-bottom: 10px;
+}
+
+.step p {
+    color: #778178;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* EQUIPO */
+
+.team {
+    background: var(--light);
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.team-card {
+    background: white;
+    border-radius: 17px;
+    padding: 35px 20px;
+    text-align: center;
+}
+
+.team-icon {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.team-card h3 {
+    color: var(--green);
+    margin-bottom: 8px;
+}
+
+.team-card p {
+    font-size: 13px;
+    color: #748075;
+    line-height: 1.8;
+}
+
+/* FAQ */
+
+.faq-container {
+    max-width: 850px;
+    margin: auto;
+}
+
+.faq-item {
+    border-bottom: 1px solid #e3e9e2;
+}
+
+.faq-question {
+    width: 100%;
+    padding: 23px 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: none;
+    border: none;
+    color: var(--green);
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+    cursor: pointer;
+}
+
+.faq-answer {
+    display: none;
+    padding: 0 5px 22px;
+    color: #748075;
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+.faq-item.active .faq-answer {
+    display: block;
+}
+
+.faq-item.active .plus {
+    transform: rotate(45deg);
+}
+
+.plus {
+    font-size: 24px;
+    transition: .3s;
+}
+
+/* CONTACTO */
+
+.contact {
+    background: var(--light);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+    align-items: start;
+}
+
+.contact-info, .contact-form {
+    background: white;
+    border-radius: 20px;
+    padding: 35px;
+}
+
+.contact-info h3, .contact-form h3 {
+    color: var(--green);
+    font-family: 'Playfair Display', serif;
+    font-size: 27px;
+    margin-bottom: 20px;
+}
+
+.contact-line {
+    margin: 23px 0;
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+.contact-line strong {
+    color: var(--green);
+}
+
+.form-group {
+    margin-bottom: 17px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #dfe6df;
+    border-radius: 9px;
+    background: #fcfdfb;
+    font-family: inherit;
+    font-size: 14px;
+}
+
+.form-group textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: 2px solid #a7c0a7;
+}
+
+.form-message {
+    margin-top: 15px;
+    font-size: 13px;
+    color: var(--green);
+    line-height: 1.6;
+}
+
+/* HORARIO */
+
+.hours {
+    background: white;
+}
+
+.hours-box {
+    max-width: 650px;
+    margin: auto;
+    background: var(--light);
+    padding: 35px;
+    border-radius: 18px;
+}
+
+.hours-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid #d9e4d8;
+    font-size: 14px;
+}
+
+/* FOOTER */
+
+footer {
+    background: var(--dark);
+    color: white;
+    padding: 60px 0 25px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+footer h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 27px;
+    margin-bottom: 17px;
+}
+
+footer h4 {
+    margin-bottom: 17px;
+}
+
+footer p, footer a {
+    font-size: 13px;
+    color: #d0dfd2;
+    line-height: 2;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #ffffff25;
+    padding-top: 23px;
+    font-size: 12px;
+    color: #c6d6c9;
+}
+
+/* MOVIL */
+
+@media(max-width: 950px) {
+    .nav-links {
+        gap: 12px;
+    }
+
+    .nav-links a {
+        font-size: 11px;
+    }
+
+    .about-grid, .shelter-grid {
+        gap: 30px;
+    }
+}
+
+@media(max-width: 750px) {
+    .topbar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .navbar {
+        min-height: 75px;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 75px;
+        left: 0;
+        width: 100%;
+        background: white;
+        padding: 25px;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 0 10px 15px #00000010;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
+    .highlight-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-grid, .shelter-grid, .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .services-grid, .facility-grid, .animal-grid, .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .value-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .steps {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .about-image img {
+        height: 350px;
+    }
+}
+
+@media(max-width: 500px) {
+    .container {
+        width: 90%;
+    }
+
+    .services-grid, .facility-grid, .animal-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+    .section-title h2,
+    .about-text h2,
+    .shelter-text h2 {
+        font-size: 34px;
+    }
+
+    .second-chance h2 {
+        font-size: 35px;
+    }
+
+    .steps {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hours-row {
+        font-size: 12px;
+    }
+}
+</style>
 </head>
 
 <body>
 
-    <header>
+<!-- BARRA SUPERIOR -->
 
-        <h1> 2ª GD CFGB Informática de Oficina</h1>
+<div class="topbar">
+    <span>📍 Clínica veterinaria rural · Lucena, Córdoba</span>
+    <span>🐾 Cuidamos de ellos, construimos oportunidades</span>
+</div>
 
-        <p></p>
+<!-- MENU -->
 
-    </header>
+<header>
+    <div class="navbar">
 
-    <nav>
+        <a href="#inicio" class="logo">
+            Incalma
+            <small>CLÍNICA VETERINARIA RURAL</small>
+        </a>
 
-        <a href="#inicio">Inicio</a>
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
 
-        <a href="#sobre-mi">Sobre mí</a>
+        <nav class="nav-links" id="navLinks">
+            <a href="#inicio">Inicio</a>
+            <a href="#nosotros">Nosotros</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#instalaciones">Instalaciones</a>
+            <a href="#refugio">Refugio</a>
+            <a href="#adopciones">Adopciones</a>
+            <a href="#contacto">Contacto</a>
+            <a href="#contacto" class="btn">Pedir cita</a>
+        </nav>
 
-        <a href="#contacto">Contacto</a>
+    </div>
+</header>
 
-    </nav>
+<!-- PORTADA -->
 
-    <main>
+<section class="hero" id="inicio">
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-label">BIENVENIDOS A INCALMA</div>
 
-        <section id="inicio" class="presentacion">
-<img src="sala_de_informatica.jpg" alt="imagen de presentacion" width="300">
-            <h2>¡Bienvenido a mi web!</h2>
+            <h1>Un lugar donde cada vida importa.</h1>
 
-            <p></p>
+            <p>
+                Somos una clínica veterinaria rural que une la
+                atención profesional de las mascotas con un refugio
+                dedicado a ayudar a los animales que más lo necesitan.
+            </p>
 
-           <a href="https://sites.google.com/g.educaand.es/pizzeria-carlos44/inicio"> <button><p>Descubrir más</p></button></a>
+            <div class="hero-buttons">
+                <a href="#servicios" class="btn">Conoce nuestros servicios</a>
+                <a href="#adopciones" class="btn btn-white">Quiero adoptar 🐾</a>
+            </div>
+        </div>
+    </div>
+</section>
 
-        </section>
+<!-- DESTACADOS -->
 
-        <section id=" módulos del curso">
+<div class="highlights">
+    <div class="container highlight-grid">
 
-            <h2> módulos del curso</h2>
+        <div class="highlight">
+            <h3>🐶 Atención animal</h3>
+            <p>Perros, gatos y compañía</p>
+        </div>
 
-            <div class="tarjetas">
+        <div class="highlight">
+            <h3>🌿 Entorno rural</h3>
+            <p>Espacios amplios y tranquilos</p>
+        </div>
 
-                <article class="tarjeta">
+        <div class="highlight">
+            <h3>🏡 Refugio</h3>
+            <p>Ayuda y recuperación animal</p>
+        </div>
 
-                    <h3>Redes </h3>
+        <div class="highlight">
+            <h3>💚 Adopción</h3>
+            <p>Nuevas oportunidades</p>
+        </div>
 
-                    <p>
+    </div>
+</div>
 
+<!-- NOSOTROS -->
 
-La asignatura de Redes  estudia cómo se conectan los dispositivos para intercambiar información y compartir recursos</p>
+<section class="section" id="nosotros">
+    <div class="container about-grid">
 
-                </article>
+        <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=1000"
+            alt="Atención veterinaria">
+            <div class="image-note">Pasión por los animales 💚</div>
+        </div>
 
-                <article class="tarjeta">
+        <div class="about-text">
+            <span>CONÓCENOS</span>
+            <h2>Mucho más que una clínica veterinaria</h2>
 
-                    <h3>ofimatica de oficina </h3>
+            <p>
+                Incalma es un proyecto empresarial creado para ofrecer
+                una atención veterinaria cercana, responsable y de calidad.
+                Nuestra clínica estará situada en las afueras de Lucena,
+                Córdoba, en una parcela rural con espacio suficiente
+                para desarrollar todas nuestras actividades.
+            </p>
 
-                    <p>La ofimática es el conjunto de programas, aplicaciones y herramientas informáticas que sirven para crear, editar, almacenar, organizar y transmitir información dentro de una oficina</p>
+            <p>
+                Queremos facilitar el acceso a los servicios veterinarios
+                a las familias de Lucena y de las zonas rurales cercanas,
+                sin olvidarnos de los animales abandonados que necesitan
+                protección.
+            </p>
 
-                </article>
+            <ul class="check-list">
+                <li>Atención veterinaria para animales de compañía.</li>
+                <li>Instalaciones amplias y zonas diferenciadas.</li>
+                <li>Espacio de refugio y recuperación.</li>
+                <li>Adopciones responsables.</li>
+                <li>Compromiso con el bienestar animal.</li>
+            </ul>
 
-                <article class="tarjeta">
+            <a href="#instalaciones" class="btn">Descubre nuestras instalaciones</a>
+        </div>
 
-                    <h3>Proyecto intermodular </h3>
+    </div>
+</section>
 
-                    <p>Consiste en crear tu propia empresa </p>
+<!-- VALORES -->
 
-                </article>
-  </article>
+<section class="section values">
+    <div class="container">
 
-                <article class="tarjeta">
+        <div class="section-title">
+            <span>NUESTRA FILOSOFÍA</span>
+            <h2>Los valores de Incalma</h2>
+            <p>Todo lo que hacemos tiene un mismo objetivo: mejorar la vida de los animales.</p>
+        </div>
 
-                    <h3>Ciencias aplicadas 1 </h3>
+        <div class="value-grid">
 
-                    <p>En esta asignatura se da Fisica , Matematicas y Biologia.</p>
-
-                </article>
-                  </article>
-
-                <article class="tarjeta">
-
-                    <h3>Comunicaciones y ciencias sociales 2</h3>
-
-                    <p>En esta asignatura se da Lengua , Geografia e Historia e ingles.</p>
-
-                </article>
+            <div class="value-card">
+                <div class="emoji">❤️</div>
+                <h3>Amor por los animales</h3>
+                <p>Tratamos a cada animal con respeto, paciencia y cariño, entendiendo que cada uno necesita unos cuidados diferentes.</p>
             </div>
 
-        </section>
+            <div class="value-card">
+                <div class="emoji">🩺</div>
+                <h3>Profesionalidad</h3>
+                <p>Buscamos ofrecer servicios veterinarios responsables, con personal cualificado y atención adaptada a cada mascota.</p>
+            </div>
 
-        <section id="contacto">
+            <div class="value-card">
+                <div class="emoji">🌱</div>
+                <h3>Compromiso social</h3>
+                <p>Queremos colaborar en la protección de los animales abandonados y fomentar las adopciones responsables.</p>
+            </div>
 
-            <h2>Contacto</h2>
+        </div>
+    </div>
+</section>
 
-            <p>Correo: mloposu0710@g.educaand.es</p>
+<!-- SERVICIOS -->
 
-        </section>
+<section class="section" id="servicios">
+    <div class="container">
 
-    </main>
+        <div class="section-title">
+            <span>CUIDAMOS DE TU MASCOTA</span>
+            <h2>Nuestros servicios veterinarios</h2>
+            <p>Contamos con diferentes servicios para cuidar de la salud y el bienestar de los animales.</p>
+        </div>
 
-    <footer>
+        <div class="services-grid">
 
-        <p>© 2026 Mi primera página web</p>
+            <div class="service-card">
+                <div class="service-icon">🩺</div>
+                <h3>Consultas veterinarias</h3>
+                <p>Atención individual para valorar la salud de tu mascota, estudiar sus síntomas y orientar su tratamiento.</p>
+                <span class="service-tag">Atención personalizada</span>
+            </div>
 
-    </footer>
+            <div class="service-card">
+                <div class="service-icon">💉</div>
+                <h3>Vacunación</h3>
+                <p>Programas de vacunación adaptados a la edad, necesidades y estado de salud de cada animal.</p>
+                <span class="service-tag">Prevención</span>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🐾</div>
+                <h3>Desparasitación</h3>
+                <p>Prevención y tratamiento de parásitos internos y externos para mantener protegidas a las mascotas.</p>
+                <span class="service-tag">Protección animal</span>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">❤️</div>
+                <h3>Revisiones generales</h3>
+                <p>Controles periódicos para comprobar el estado físico, peso, alimentación y evolución del animal.</p>
+                <span class="service-tag">Salud preventiva</span>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🔬</div>
+                <h3>Pruebas diagnósticas</h3>
+                <p>Pruebas necesarias para ayudar a detectar enfermedades y conocer mejor los problemas de salud.</p>
+                <span class="service-tag">Diagnóstico</span>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">💊</div>
+                <h3>Tratamientos</h3>
+                <p>Cuidados y tratamientos veterinarios adaptados a las necesidades de cada paciente.</p>
+                <span class="service-tag">Recuperación</span>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🏥</div>
+                <h3>Cirugías</h3>
+                <p>Intervenciones quirúrgicas cuando estén indicadas y se disponga de instalaciones y profesionales adecuados.</p>
+                <span class="service-tag">Atención especializada</span>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🥣</div>
+                <h3>Asesoramiento nutricional</h3>
+                <p>Orientación sobre alimentación, hábitos saludables y necesidades nutricionales de cada mascota.</p>
+                <span class="service-tag">Alimentación</span>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🐕</div>
+                <h3>Orientación para propietarios</h3>
+                <p>Consejos sobre cuidados básicos, higiene, prevención y bienestar para mejorar la vida de los animales.</p>
+                <span class="service-tag">Educación animal</span>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- INSTALACIONES -->
+
+<section class="section facilities" id="instalaciones">
+    <div class="container">
+
+        <div class="section-title">
+            <span>NUESTRO ESPACIO</span>
+            <h2>Conoce nuestras instalaciones</h2>
+            <p>Un entorno rural pensado para separar las diferentes actividades y ofrecer comodidad y seguridad.</p>
+        </div>
+
+        <div class="facility-grid">
+
+            <div class="facility">
+                <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800" alt="Recepción">
+                <div class="facility-content">
+                    <h3>Recepción y sala de espera</h3>
+                    <p>Un espacio acogedor donde recibir a los propietarios y organizar las visitas veterinarias.</p>
+                </div>
+            </div>
+
+            <div class="facility">
+                <img src="https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?w=800" alt="Consulta">
+                <div class="facility-content">
+                    <h3>Consultas veterinarias</h3>
+                    <p>Salas preparadas para revisar a los animales y realizar diferentes exploraciones.</p>
+                </div>
+            </div>
+
+            <div class="facility">
+                <img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?w=800" alt="Cuidados de animales">
+                <div class="facility-content">
+                    <h3>Zona de recuperación</h3>
+                    <p>Espacio destinado a los animales que necesitan cuidados y seguimiento veterinario.</p>
+                </div>
+            </div>
+
+            <div class="facility">
+                <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=800" alt="Zona exterior">
+                <div class="facility-content">
+                    <h3>Zonas exteriores</h3>
+                    <p>Espacios al aire libre donde los animales pueden disfrutar de un entorno tranquilo y seguro.</p>
+                </div>
+            </div>
+
+            <div class="facility">
+                <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=800" alt="Zona de perros">
+                <div class="facility-content">
+                    <h3>Zona de refugio</h3>
+                    <p>Áreas separadas para alojar y cuidar a los animales rescatados.</p>
+                </div>
+            </div>
+
+            <div class="facility">
+                <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?w=800" alt="Animales">
+                <div class="facility-content">
+                    <h3>Espacio de adopción</h3>
+                    <p>Un lugar para conocer a los animales y facilitar el encuentro con sus futuras familias.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- REFUGIO -->
+
+<section class="section shelter" id="refugio">
+    <div class="container shelter-grid">
+
+        <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=1000" alt="Perros en un refugio">
+
+        <div class="shelter-text">
+            <span>UNA PARTE MUY IMPORTANTE DE INCALMA</span>
+            <h2>También tenemos un hogar para quienes lo necesitan</h2>
+
+            <p>
+                Nuestro refugio nace con la intención de ayudar a perros,
+                gatos y otros animales que han sido abandonados o que
+                necesitan un lugar seguro.
+            </p>
+
+            <p>
+                Los animales que llegan al refugio reciben alimentación,
+                atención veterinaria, cuidados diarios y un espacio
+                donde poder recuperarse.
+            </p>
+
+            <p>
+                Trabajamos para encontrar familias responsables que
+                quieran ofrecerles un hogar definitivo y una vida mejor.
+            </p>
+
+            <a href="#adopciones" class="btn">Ver animales en adopción</a>
+        </div>
+
+    </div>
+</section>
+
+<!-- ADOPCIONES -->
+
+<section class="section adoptions" id="adopciones">
+    <div class="container">
+
+        <div class="section-title">
+            <span>ENCUENTRA UN NUEVO AMIGO</span>
+            <h2>Animales que buscan familia</h2>
+            <p>Adoptar es dar una oportunidad a un animal que necesita un hogar lleno de cariño.</p>
+        </div>
+
+        <div class="animal-grid">
+
+            <div class="animal-card">
+                <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?w=800" alt="Perro llamado Toby">
+                <div class="animal-info">
+                    <h3>Toby 🐶</h3>
+                    <p>Ficha de ejemplo. Un perrito simpático que busca una familia responsable que quiera compartir muchos momentos con él.</p>
+                    <a href="#contacto" class="btn">Me interesa</a>
+                </div>
+            </div>
+
+            <div class="animal-card">
+                <img src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?w=800" alt="Gato llamado Luna">
+                <div class="animal-info">
+                    <h3>Luna 🐱</h3>
+                    <p>Ficha de ejemplo. Una gatita que necesita un hogar tranquilo donde recibir cariño y todos los cuidados necesarios.</p>
+                    <a href="#contacto" class="btn">Me interesa</a>
+                </div>
+            </div>
+
+            <div class="animal-card">
+                <img src="https://images.unsplash.com/photo-1544568100-847a948585b9?w=800" alt="Perro llamado Max">
+                <div class="animal-info">
+                    <h3>Max 🐾</h3>
+                    <p>Ficha de ejemplo. Un compañero de cuatro patas que espera encontrar una familia con la que empezar una nueva etapa.</p>
+                    <a href="#contacto" class="btn">Me interesa</a>
+                </div>
+            </div>
+
+        </div>
+
+        <p style="text-align:center;margin-top:30px;color:#788579;font-size:12px;">
+            Las fichas y animales mostrados son ejemplos de diseño, no anuncios de adopción reales.
+        </p>
+
+    </div>
+</section>
+
+<!-- PROGRAMA SEGUNDA OPORTUNIDAD -->
+
+<section class="section second-chance">
+    <div class="container">
+
+        <span style="letter-spacing:3px;font-size:12px;">NUESTRO COMPROMISO SOLIDARIO</span>
+
+        <h2>Programa Segunda Oportunidad 💚</h2>
+
+        <p>
+            En Incalma creemos que todos los animales merecen recibir
+            cuidados, independientemente de su historia o situación.
+            Por eso, una parte de los ingresos de determinados servicios
+            se destinará a ayudar a los animales del refugio.
+        </p>
+
+        <p>
+            Con esta iniciativa queremos colaborar con sus tratamientos,
+            vacunas, alimentación y necesidades básicas, para que puedan
+            recuperarse y encontrar una familia.
+        </p>
+
+        <a href="#contacto" class="btn btn-white">Colabora con nosotros</a>
+
+    </div>
+</section>
+
+<!-- COMO ADOPTAR -->
+
+<section class="section">
+    <div class="container">
+
+        <div class="section-title">
+            <span>ADOPCIÓN RESPONSABLE</span>
+            <h2>¿Cómo puedes adoptar?</h2>
+            <p>Queremos asegurarnos de que cada animal encuentre una familia adecuada para sus necesidades.</p>
+        </div>
+
+        <div class="steps">
+
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Infórmate</h3>
+                <p>Conoce a los animales disponibles y descubre cuál puede encajar con tu familia.</p>
+            </div>
+
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Contacta</h3>
+                <p>Escríbenos para mostrar tu interés y resolver todas tus dudas.</p>
+            </div>
+
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Conócele</h3>
+                <p>Organizaremos un encuentro para que puedas conocer al animal.</p>
+            </div>
+
+            <div class="step">
+                <div class="step-number">4</div>
+                <h3>Nuevo hogar</h3>
+                <p>Si todo es adecuado, se tramitará la adopción responsable y su entrega.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- EQUIPO -->
+
+<section class="section team">
+    <div class="container">
+
+        <div class="section-title">
+            <span>LAS PERSONAS DETRÁS DEL PROYECTO</span>
+            <h2>Nuestro equipo</h2>
+            <p>Un proyecto necesita personas comprometidas y preparadas para cuidar de los animales.</p>
+        </div>
+
+        <div class="team-grid">
+
+            <div class="team-card">
+                <div class="team-icon">👩‍⚕️</div>
+                <h3>Equipo veterinario</h3>
+                <p>Profesionales veterinarios encargados de las consultas, diagnósticos, tratamientos y seguimiento de los pacientes.</p>
+            </div>
+
+            <div class="team-card">
+                <div class="team-icon">🐾</div>
+                <h3>Auxiliares veterinarios</h3>
+                <p>Personal de apoyo que colabora en la atención de los animales, preparación de consultas y cuidados diarios.</p>
+            </div>
+
+            <div class="team-card">
+                <div class="team-icon">🏡</div>
+                <h3>Equipo del refugio</h3>
+                <p>Personas encargadas de la alimentación, limpieza, bienestar y atención de los animales rescatados.</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- PREGUNTAS FRECUENTES -->
+
+<section class="section">
+    <div class="container">
+
+        <div class="section-title">
+            <span>RESOLVEMOS TUS DUDAS</span>
+            <h2>Preguntas frecuentes</h2>
+            <p>Algunas respuestas que pueden ayudarte a conocer mejor Incalma.</p>
+        </div>
+
+        <div class="faq-container">
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    ¿Dónde está situada Incalma?
+                    <span class="plus">+</span>
+                </button>
+                <div class="faq-answer">
+                    Nuestro proyecto está ubicado en una zona rural a las afueras de Lucena, Córdoba, para contar con más espacio y facilitar el acceso a las familias de las zonas cercanas.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    ¿Qué animales atendemos?
+                    <span class="plus">+</span>
+                </button>
+                <div class="faq-answer">
+                    La clínica está orientada principalmente a perros, gatos y otros animales de compañía, siempre según los servicios y medios disponibles.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    ¿Cómo puedo adoptar un animal?
+                    <span class="plus">+</span>
+                </button>
+                <div class="faq-answer">
+                    Puedes contactar con nosotros para informarte sobre los animales disponibles, conocer sus necesidades y comenzar el proceso de adopción responsable.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    ¿Puedo colaborar con el refugio?
+                    <span class="plus">+</span>
+                </button>
+                <div class="faq-answer">
+                    Sí. Puedes informarte sobre las formas de colaboración, como ayudar con alimentos, productos de higiene y otras necesidades del refugio.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    ¿Necesito pedir cita antes de acudir?
+                    <span class="plus">+</span>
+                </button>
+                <div class="faq-answer">
+                    Lo recomendable es contactar previamente para organizar la visita y poder atender a cada mascota de la mejor manera posible.
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- HORARIO -->
+
+<section class="section hours">
+    <div class="container">
+
+        <div class="section-title">
+            <span>ORGANIZA TU VISITA</span>
+            <h2>Horario de atención</h2>
+            <p>Horario orientativo propuesto para el proyecto. Se deberá confirmar antes de la apertura.</p>
+        </div>
+
+        <div class="hours-box">
+
+            <div class="hours-row">
+                <strong>Lunes a viernes</strong>
+                <span>09:00 - 14:00 / 16:00 - 19:00</span>
+            </div>
+
+            <div class="hours-row">
+                <strong>Sábados</strong>
+                <span>09:00 - 13:00</span>
+            </div>
+
+            <div class="hours-row">
+                <strong>Domingos y festivos</strong>
+                <span>Cerrado</span>
+            </div>
+
+            <p style="margin-top:20px;font-size:12px;color:#718075;line-height:1.8;">
+                Para urgencias fuera del horario de atención, se facilitará
+                información sobre los servicios veterinarios de urgencias disponibles.
+            </p>
+
+        </div>
+    </div>
+</section>
+
+<!-- CONTACTO -->
+
+<section class="section contact" id="contacto">
+    <div class="container">
+
+        <div class="section-title">
+            <span>ESTAMOS AQUÍ PARA AYUDARTE</span>
+            <h2>Contacta con Incalma</h2>
+            <p>Si tienes alguna pregunta, quieres pedir una cita o estás interesado en adoptar, escríbenos.</p>
+        </div>
+
+        <div class="contact-grid">
+
+            <div class="contact-info">
+
+                <h3>Información de contacto</h3>
+
+                <div class="contact-line">
+                    <strong>📍 Dirección</strong><br>
+                    Afueras de Lucena, Córdoba, España.
+                    <br><small>Dirección exacta pendiente de confirmar.</small>
+                </div>
+
+                <div class="contact-line">
+                    <strong>📞 Teléfono</strong><br>
+                    Pendiente de asignar.
+                </div>
+
+                <div class="contact-line">
+                    <strong>✉️ Correo electrónico</strong><br>
+                    Pendiente de crear.
+                </div>
+
+                <div class="contact-line">
+                    <strong>🐾 Especialidad</strong><br>
+                    Clínica veterinaria rural, refugio y adopción.
+                </div>
+
+                <div class="contact-line">
+                    <strong>💚 Nuestra frase</strong><br>
+                    Cuidamos de ellos, construimos nuevas oportunidades.
+                </div>
+
+            </div>
+
+            <div class="contact-form">
+
+                <h3>Envíanos un mensaje</h3>
+
+                <form id="contactForm">
+
+                    <div class="form-group">
+                        <label for="nombre">Nombre completo</label>
+                        <input id="nombre" type="text" placeholder="Escribe tu nombre" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Correo electrónico</label>
+                        <input id="email" type="email" placeholder="Tu correo electrónico" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="motivo">¿En qué podemos ayudarte?</label>
+                        <select id="motivo" required>
+                            <option value="">Selecciona una opción</option>
+                            <option>Quiero pedir una cita</option>
+                            <option>Información sobre adopciones</option>
+                            <option>Quiero colaborar con el refugio</option>
+                            <option>Información sobre servicios</option>
+                            <option>Otra consulta</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mensaje">Tu mensaje</label>
+                        <textarea id="mensaje" placeholder="Escribe aquí tu mensaje..." required></textarea>
+                    </div>
+
+                    <button class="btn" type="submit">Enviar mensaje</button>
+
+                    <p class="form-message" id="formMessage" aria-live="polite"></p>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <div>
+                <h3>Incalma 💚</h3>
+                <p>
+                    Clínica Veterinaria Rural con Refugio y Adopción.
+                    Un proyecto que une la salud animal con el compromiso
+                    de ayudar a quienes más lo necesitan.
+                </p>
+            </div>
+
+            <div>
+                <h4>Enlaces rápidos</h4>
+                <div class="footer-links">
+                    <a href="#nosotros">Sobre nosotros</a>
+                    <a href="#servicios">Servicios</a>
+                    <a href="#instalaciones">Instalaciones</a>
+                    <a href="#refugio">Refugio</a>
+                    <a href="#adopciones">Adopciones</a>
+                </div>
+            </div>
+
+            <div>
+                <h4>Contacto</h4>
+                <div class="footer-links">
+                    <a href="#contacto">Pedir información</a>
+                    <a href="#contacto">Pedir cita</a>
+                    <a href="#contacto">Colaborar</a>
+                    <a href="#contacto">Adoptar</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            © 2026 Incalma · Lucena, Córdoba · Proyecto empresarial veterinario.
+            <br><br>
+            Cuidamos de ellos, construimos nuevas oportunidades. 🐾
+        </div>
+
+    </div>
+</footer>
+
+<script>
+
+// MENU PARA MOVILES
+
+function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("open");
+}
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+        document.getElementById("navLinks").classList.remove("open");
+    });
+});
+
+// PREGUNTAS FRECUENTES
+
+document.querySelectorAll(".faq-question").forEach(button => {
+    button.addEventListener("click", () => {
+        const item = button.parentElement;
+        item.classList.toggle("active");
+    });
+});
+
+// FORMULARIO DE CONTACTO
+
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const nombre = document.getElementById("nombre").value;
+
+    document.getElementById("formMessage").textContent =
+        "¡Gracias, " + nombre + "! El formulario de demostración se ha completado. Para recibir mensajes reales hay que conectar un servicio de envío.";
+
+    this.reset();
+});
+
+
+
+</script> 
+
+<script>
+document.addEventListener("scroll", function () {
+    if (window.__huellasIncalma) return;
+    window.__huellasIncalma = true;
+
+    const huella = document.createElement("div");
+    huella.className = "huellita-incalma";
+
+    huella.innerHTML = `
+        <svg viewBox="0 0 40 40" width="100%" height="100%">
+            <ellipse cx="20" cy="25" rx="9" ry="7" fill="currentColor"/>
+            <ellipse cx="8" cy="13" rx="4" ry="6" fill="currentColor"/>
+            <ellipse cx="17" cy="8" rx="4" ry="6" fill="currentColor"/>
+            <ellipse cx="26" cy="9" rx="4" ry="6" fill="currentColor"/>
+            <ellipse cx="33" cy="15" rx="4" ry="6" fill="currentColor"/>
+        </svg>
+    `;
+
+    const lado = Math.random() < 0.5 ? 30 : window.innerWidth - 55;
+    huella.style.left = lado + "px";
+    huella.style.top = (window.innerHeight - 70) + "px";
+
+    document.body.appendChild(huella);
+
+    setTimeout(() => huella.remove(), 1800);
+
+    setTimeout(() => {
+        window.__huellasIncalma = false;
+    }, 220);
+}, { passive: true });
+</script>
+
+<div id="perrito-incalma">
+
+    <!-- CACHORRITO 1 -->
+    <svg class="cachorro-svg" viewBox="0 0 100 85">
+        <path d="M15 42 Q12 25 35 25 Q60 18 72 42 Q80 60 57 64 L25 61 Q12 57 15 42"
+              fill="#E2B98D" stroke="#805638" stroke-width="2"/>
+        <path d="M27 31 Q12 10 18 9 Q35 12 38 32"
+              fill="#805638"/>
+        <ellipse cx="75" cy="43" rx="18" ry="14" fill="#E2B98D"/>
+        <circle cx="86" cy="39" r="3" fill="#30231D"/>
+        <circle cx="69" cy="32" r="2.5" fill="#30231D"/>
+        <ellipse cx="92" cy="47" rx="5" ry="4" fill="#30231D"/>
+        <g class="pata-familia">
+            <path d="M28 57 L27 74 L39 74 L41 59" fill="#E2B98D" stroke="#805638" stroke-width="2"/>
+        </g>
+        <g class="pata-familia retrasada">
+            <path d="M56 59 L58 74 L70 74 L69 57" fill="#E2B98D" stroke="#805638" stroke-width="2"/>
+        </g>
+        <path d="M42 62 Q51 68 60 62" fill="none" stroke="#72905A" stroke-width="4"/>
+    </svg>
+
+    <!-- CACHORRITO 2 -->
+    <svg class="cachorro-svg" viewBox="0 0 100 85">
+        <path d="M15 42 Q12 25 35 25 Q60 18 72 42 Q80 60 57 64 L25 61 Q12 57 15 42"
+              fill="#F0DCC0" stroke="#805638" stroke-width="2"/>
+        <path d="M27 31 Q12 10 18 9 Q35 12 38 32"
+              fill="#A8754D"/>
+        <ellipse cx="75" cy="43" rx="18" ry="14" fill="#F0DCC0"/>
+        <circle cx="86" cy="39" r="3" fill="#30231D"/>
+        <circle cx="69" cy="32" r="2.5" fill="#30231D"/>
+        <ellipse cx="92" cy="47" rx="5" ry="4" fill="#30231D"/>
+        <g class="pata-familia">
+            <path d="M28 57 L27 74 L39 74 L41 59" fill="#F0DCC0" stroke="#805638" stroke-width="2"/>
+        </g>
+        <g class="pata-familia retrasada">
+            <path d="M56 59 L58 74 L70 74 L69 57" fill="#F0DCC0" stroke="#805638" stroke-width="2"/>
+        </g>
+    </svg>
+
+    <!-- MAMÁ PERRO -->
+    <svg class="perro-svg" viewBox="0 0 140 115">
+        <!-- Cola -->
+        <path class="cola-familia"
+              d="M25 55 Q5 36 12 20"
+              fill="none" stroke="#80502F" stroke-width="11"
+              stroke-linecap="round"/>
+
+        <!-- Cuerpo -->
+        <path d="M20 47 Q38 27 79 39 Q96 46 91 76 Q83 91 40 84 Q18 78 20 47"
+              fill="#B77B50" stroke="#80502F" stroke-width="2"/>
+
+        <!-- Patas traseras -->
+        <g class="pata-familia">
+            <path d="M37 75 L34 101 Q34 107 48 106 L52 101 L48 96 L52 77"
+                  fill="#A96D43" stroke="#80502F" stroke-width="2"/>
+        </g>
+        <g class="pata-familia retrasada">
+            <path d="M62 79 L63 101 Q63 108 76 106 L80 101 L75 96 L78 78"
+                  fill="#B77B50" stroke="#80502F" stroke-width="2"/>
+        </g>
+
+        <!-- Patas delanteras -->
+        <g class="pata-familia retrasada">
+            <path d="M79 72 L84 100 Q85 107 98 105 L102 100 L97 95 L94 68"
+                  fill="#B77B50" stroke="#80502F" stroke-width="2"/>
+        </g>
+        <g class="pata-familia">
+            <path d="M93 68 L105 98 Q108 105 119 100 L121 95 L114 91 L107 65"
+                  fill="#C58B5D" stroke="#80502F" stroke-width="2"/>
+        </g>
+
+        <!-- Cabeza -->
+        <path d="M76 42 Q76 13 101 12 Q127 12 131 41 Q131 64 106 69 Q81 65 76 42"
+              fill="#C58B5D" stroke="#80502F" stroke-width="2"/>
+
+        <!-- Oreja -->
+        <path d="M89 23 Q67 1 72 38 Q79 53 91 39"
+              fill="#80502F"/>
+
+        <!-- Hocico -->
+        <ellipse cx="121" cy="48" rx="16" ry="11" fill="#E8C9A8"/>
+        <circle cx="134" cy="44" r="4" fill="#30231D"/>
+
+        <!-- Ojo -->
+        <circle cx="111" cy="30" r="3" fill="#30231D"/>
+        <circle cx="112" cy="29" r="1" fill="white"/>
+
+        <!-- Collar -->
+        <path d="M83 61 Q103 75 119 61"
+              fill="none" stroke="#496B45" stroke-width="5"/>
+        <circle cx="102" cy="70" r="4" fill="#E6C66B"/>
+    </svg>
+
+    <!-- PELOTA -->
+    <div class="pelota-incalma"></div>
+
+</div>
 
 </body>
-
 </html>
+
+
+
+
+
+
+
+
