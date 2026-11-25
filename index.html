@@ -1432,6 +1432,63 @@ footer p, footer a {
 
     </div>
 </section>
+<!-- OPINIONES DE CLIENTES -->
+
+<section class="section reviews">
+    <div class="container">
+
+        <div class="section-title">
+            <span>EXPERIENCIAS INCALMA</span>
+            <h2>Lo que dicen de nosotros</h2>
+            <p>La confianza de las familias y el bienestar de sus mascotas son nuestra mayor recompensa.</p>
+        </div>
+
+        <div class="reviews-grid">
+
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p>"Un trato estupendo y muy cercano. Se nota que les importan los animales y que hacen todo lo posible para cuidarlos."</p>
+                <div class="review-person">
+                    <div class="review-avatar">👩</div>
+                    <div>
+                        <h3>Laura M.</h3>
+                        <span>Propietaria de un perro</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p>"Me encanta que tengan también un refugio. Es una iniciativa muy bonita y necesaria para ayudar a los animales abandonados."</p>
+                <div class="review-person">
+                    <div class="review-avatar">👨</div>
+                    <div>
+                        <h3>Daniel R.</h3>
+                        <span>Colaborador del refugio</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p>"El proyecto me parece genial. Poder llevar a mi mascota a una clínica y saber que también ayudan a otros animales es una gran idea."</p>
+                <div class="review-person">
+                    <div class="review-avatar">👩</div>
+                    <div>
+                        <h3>Marta G.</h3>
+                        <span>Familia adoptante</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <p class="reviews-note">
+            Opiniones ficticias de ejemplo creadas para la presentación del proyecto.
+        </p>
+
+    </div>
+</section>
 
 <!-- PREGUNTAS FRECUENTES -->
 
@@ -1588,36 +1645,66 @@ footer p, footer a {
 
                 <form id="contactForm">
 
-                    <div class="form-group">
-                        <label for="nombre">Nombre completo</label>
-                        <input id="nombre" type="text" placeholder="Escribe tu nombre" required>
-                    </div>
+                   <form id="contactForm">
 
-                    <div class="form-group">
-                        <label for="email">Correo electrónico</label>
-                        <input id="email" type="email" placeholder="Tu correo electrónico" required>
-                    </div>
+    <div class="form-group">
+        <label for="nombre">Nombre completo</label>
+        <input id="nombre" type="text" placeholder="Escribe tu nombre" required>
+    </div>
 
-                    <div class="form-group">
-                        <label for="motivo">¿En qué podemos ayudarte?</label>
-                        <select id="motivo" required>
-                            <option value="">Selecciona una opción</option>
-                            <option>Quiero pedir una cita</option>
-                            <option>Información sobre adopciones</option>
-                            <option>Quiero colaborar con el refugio</option>
-                            <option>Información sobre servicios</option>
-                            <option>Otra consulta</option>
-                        </select>
-                    </div>
+    <div class="form-group">
+        <label for="email">Correo electrónico</label>
+        <input id="email" type="email" placeholder="Tu correo electrónico" required>
+    </div>
 
-                    <div class="form-group">
-                        <label for="mensaje">Tu mensaje</label>
-                        <textarea id="mensaje" placeholder="Escribe aquí tu mensaje..." required></textarea>
-                    </div>
+    <div class="form-group">
+        <label for="telefono">Teléfono de contacto</label>
+        <input id="telefono" type="tel" placeholder="Tu número de teléfono" required>
+    </div>
 
-                    <button class="btn" type="submit">Enviar mensaje</button>
+    <div class="form-group">
+        <label for="mascota">Nombre de tu mascota</label>
+        <input id="mascota" type="text" placeholder="¿Cómo se llama tu mascota?" required>
+    </div>
 
-                    <p class="form-message" id="formMessage" aria-live="polite"></p>
+    <div class="form-group">
+        <label for="tipoAnimal">Tipo de animal</label>
+        <select id="tipoAnimal" required>
+            <option value="">Selecciona una opción</option>
+            <option>Perro</option>
+            <option>Gato</option>
+            <option>Otro animal</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="fecha">Fecha que prefieres</label>
+        <input id="fecha" type="date" required>
+    </div>
+
+    <div class="form-group">
+        <label for="motivo">Motivo de la consulta</label>
+        <select id="motivo" required>
+            <option value="">Selecciona una opción</option>
+            <option>Revisión general</option>
+            <option>Vacunación</option>
+            <option>Desparasitación</option>
+            <option>Problema de salud</option>
+            <option>Información sobre adopciones</option>
+            <option>Otro motivo</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="mensaje">Información adicional</label>
+        <textarea id="mensaje" placeholder="Cuéntanos algo más sobre tu mascota..."></textarea>
+    </div>
+
+    <button class="btn" type="submit">Solicitar cita 🐾</button>
+
+    <p class="form-message" id="formMessage" aria-live="polite"></p>
+
+</form>
 
                 </form>
 
@@ -1697,15 +1784,17 @@ document.querySelectorAll(".faq-question").forEach(button => {
     });
 });
 
-// FORMULARIO DE CONTACTO
+// FORMULARIO PARA SOLICITAR CITA
 
 document.getElementById("contactForm").addEventListener("submit", function(event) {
     event.preventDefault();
 
     const nombre = document.getElementById("nombre").value;
+    const mascota = document.getElementById("mascota").value;
+    const fecha = document.getElementById("fecha").value;
 
     document.getElementById("formMessage").textContent =
-        "¡Gracias, " + nombre + "! El formulario de demostración se ha completado. Para recibir mensajes reales hay que conectar un servicio de envío.";
+        "¡Gracias, " + nombre + "! Hemos registrado tu solicitud de cita para " + mascota + " el día " + fecha + ". Este formulario es una demostración y todavía no envía solicitudes reales.";
 
     this.reset();
 });
@@ -1745,7 +1834,24 @@ document.addEventListener("scroll", function () {
     }, 220);
 }, { passive: true });
 </script>
+<!-- GATITO QUE PARPADEA -->
+<div class="gato-incalma" aria-label="Gatito decorativo">
+    <div class="cara-gatito oreja-gatito">
+        <div class="ojos-gatito">
+            <span class="ojo-gatito"></span>
+            <span class="ojo-gatito"></span>
+        </div>
+        <div class="nariz-gatito"></div>
+        <div class="boca-gatito">ω</div>
+    </div>
+</div>
 
+<!-- PERRITO QUE SALUDA AL ENTRAR -->
+<div class="saludo-perrito">
+    <span class="perrito-saludo">🐶</span>
+    <span class="patita-saludo">🐾</span>
+    <span class="texto-saludo">¡Hola!</span>
+</div>
 <div id="perrito-incalma">
 
     <!-- CACHORRITO 1 -->

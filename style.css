@@ -139,3 +139,315 @@
         transform: scale(0.9) rotate(12deg);
     }
 }
+/* OPINIONES DE CLIENTES */
+
+.reviews {
+    background: #ffffff;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.review-card {
+    background: #faf9f4;
+    padding: 30px;
+    border-radius: 18px;
+    border: 1px solid #e8eee6;
+    transition: .3s;
+}
+
+.review-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px #00000010;
+}
+
+.review-stars {
+    color: #d4a94f;
+    font-size: 22px;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+}
+
+.review-card > p {
+    color: #68756b;
+    font-size: 14px;
+    line-height: 1.9;
+    min-height: 110px;
+}
+
+.review-person {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-top: 22px;
+}
+
+.review-avatar {
+    width: 45px;
+    height: 45px;
+    background: #eaf0e8;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 23px;
+}
+
+.review-person h3 {
+    color: #315d48;
+    font-size: 14px;
+}
+
+.review-person span {
+    color: #849084;
+    font-size: 11px;
+}
+
+.reviews-note {
+    text-align: center;
+    color: #899389;
+    font-size: 11px;
+    margin-top: 25px;
+}
+
+@media(max-width: 750px) {
+    .reviews-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .review-card > p {
+        min-height: auto;
+    }
+} /* =====================================
+   ANIMACIONES EXTRA DE INCALMA
+   ===================================== */
+
+/* GATITO DE INCALMA */
+
+.gato-incalma {
+    position: fixed;
+    top: 115px;
+    right: 18px;
+    width: 80px;
+    height: 80px;
+    z-index: 9997;
+    pointer-events: none;
+}
+
+.cara-gatito {
+    position: absolute;
+    width: 66px;
+    height: 55px;
+    left: 5px;
+    bottom: 3px;
+    background: #e8cba5;
+    border: 2px solid #9b7958;
+    border-radius: 48% 48% 45% 45%;
+    isolation: isolate;
+}
+
+/* OREJITAS TRIANGULARES */
+
+.cara-gatito::before,
+.cara-gatito::after {
+    content: "";
+    position: absolute;
+    top: -19px;
+    width: 25px;
+    height: 30px;
+    background: #e8cba5;
+    border: 2px solid #9b7958;
+    z-index: -1;
+    transform-origin: bottom center;
+}
+
+.cara-gatito::before {
+    left: 1px;
+    clip-path: polygon(0 100%, 20% 0, 100% 100%);
+    animation: oreja-izquierda 1.8s ease-in-out infinite alternate;
+}
+
+.cara-gatito::after {
+    right: 1px;
+    clip-path: polygon(0 100%, 80% 0, 100% 100%);
+    animation: oreja-derecha 1.8s ease-in-out infinite alternate;
+}
+
+/* OJOS */
+
+.ojos-gatito {
+    position: absolute;
+    top: 19px;
+    left: 15px;
+    display: flex;
+    gap: 17px;
+}
+
+.ojo-gatito {
+    width: 7px;
+    height: 10px;
+    background: #49372c;
+    border-radius: 50%;
+    animation: parpadeo-gatito 4s infinite;
+}
+
+@keyframes parpadeo-gatito {
+    0%, 42%, 46%, 100% { transform: scaleY(1); }
+    44% { transform: scaleY(0.1); }
+}
+
+/* NARIZ Y BOCA */
+
+.nariz-gatito {
+    position: absolute;
+    top: 32px;
+    left: 30px;
+    width: 7px;
+    height: 5px;
+    background: #b87578;
+    border-radius: 50%;
+}
+
+.boca-gatito {
+    position: absolute;
+    top: 38px;
+    left: 29px;
+    color: #755343;
+    font-size: 12px;
+}
+
+/* MOVIMIENTO DE LAS OREJAS */
+
+@keyframes oreja-izquierda {
+    from { transform: rotate(-8deg); }
+    to { transform: rotate(12deg); }
+}
+
+@keyframes oreja-derecha {
+    from { transform: rotate(8deg); }
+    to { transform: rotate(-12deg); }
+}
+
+/* 2. CORAZONCITOS FLOTANDO EN ADOPCIONES */
+
+.corazones-adopcion {
+    position: relative;
+    height: 0;
+    width: 100%;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.corazones-adopcion span {
+    position: absolute;
+    bottom: 0;
+    font-size: 19px;
+    opacity: 0;
+    animation: flotar-corazon 4s ease-in-out infinite;
+}
+
+.corazones-adopcion span:nth-child(1) {
+    left: 12%;
+    animation-delay: 0s;
+}
+
+.corazones-adopcion span:nth-child(2) {
+    left: 35%;
+    animation-delay: 1s;
+}
+
+.corazones-adopcion span:nth-child(3) {
+    left: 65%;
+    animation-delay: 2s;
+}
+
+.corazones-adopcion span:nth-child(4) {
+    left: 88%;
+    animation-delay: 1.5s;
+}
+
+@keyframes flotar-corazon {
+    0% {
+        transform: translateY(15px) scale(0.6);
+        opacity: 0;
+    }
+    25% {
+        opacity: 0.9;
+    }
+    100% {
+        transform: translateY(-100px) scale(1.2) rotate(20deg);
+        opacity: 0;
+    }
+}
+
+
+/* 3. PERRITO QUE ENTRA Y SALUDA */
+
+.saludo-perrito {
+    position: fixed;
+    top: 105px;
+    left: -160px;
+    z-index: 9996;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    pointer-events: none;
+    animation: entrada-perrito 7s ease-in-out 1;
+}
+
+.perrito-saludo {
+    font-size: 48px;
+}
+
+.patita-saludo {
+    display: inline-block;
+    font-size: 25px;
+    transform-origin: bottom center;
+    animation: saludar-patita 0.45s ease-in-out 5;
+    animation-delay: 1.2s;
+}
+
+.texto-saludo {
+    background: #315d48;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 15px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+@keyframes entrada-perrito {
+    0% {
+        left: -160px;
+        opacity: 0;
+    }
+    15%, 70% {
+        left: 18px;
+        opacity: 1;
+    }
+    100% {
+        left: -160px;
+        opacity: 0;
+    }
+}
+
+@keyframes saludar-patita {
+    0%, 100% { transform: rotate(0); }
+    50% { transform: rotate(-35deg); }
+}
+
+
+/* EVITAR ANIMACIONES SI EL USUARIO LAS REDUCE */
+
+@media (prefers-reduced-motion: reduce) {
+    .gato-incalma,
+    .ojo-gatito,
+    .oreja-gatito,
+    .corazones-adopcion span,
+    .saludo-perrito,
+    .patita-saludo {
+        animation: none;
+    }
+}
